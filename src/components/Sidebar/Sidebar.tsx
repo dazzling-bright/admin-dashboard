@@ -11,7 +11,7 @@ const Sidebar = () => {
       height="100%"
       bg="#F3F4F6"
       overflowY="auto"
-      borderRight="2px solid #8F8F8F"
+      borderRight="2px solid #D1D7DE"
       pt={4}
       gridArea="sidebar"
     >

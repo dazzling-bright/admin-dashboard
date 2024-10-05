@@ -94,21 +94,27 @@ const MainContent = () => {
         color="#333"
       >
         <Box p={4} px={8}>
-          <InputGroup width="50%">
+          <InputGroup width="40%">
             <InputLeftElement>
-              <SearchIcon color="#8F8F8F" cursor={"pointer"} />
+              <SearchIcon color="#6B7280" cursor={"pointer"} />
             </InputLeftElement>
             <Input
-              placeholder="Search..."
+              placeholder="Search"
               size="md"
               variant="outline"
-              borderColor="#8F8F8F"
-              color="#8F8F8F"
-              _placeholder={{ color: "#8F8F8F" }}
-              _focus={{ borderColor: "#8F8F8F", boxShadow: "none" }}
+              borderColor="#D1D7DE"
+              color="#6B7280"
+              _placeholder={{ color: "#6B7280", fontWeight: "600" }}
+              _focus={{
+                borderColor: "#D1D7DE",
+                boxShadow: "0 0 0 2px rgba(0, 0, 0, 0.3)",
+                backgroundColor: "whiteAlpha.700",
+                transition:
+                  "boxShadow 0.3s ease, background-color 0.3s ease-in-out",
+              }}
               _hover={{
                 boxShadow: "0 0 0 2px rgba(0, 0, 0, 0.1)",
-                bg: "whiteAlpha.100",
+                backgroundColor: "whiteAlpha.700",
                 transition:
                   "boxShadow 0.3s ease, background-color 0.3s ease-in-out",
               }}

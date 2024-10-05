@@ -6,8 +6,7 @@ import { MdEventNote, MdNotifications } from "react-icons/md";
 import { GoPeople } from "react-icons/go";
 import { FaChevronDown } from "react-icons/fa6";
 
-const CommunitySection
- = () => {
+const CommunitySection = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Array of dropdown items with corresponding React icons
@@ -43,22 +42,26 @@ const CommunitySection
         >
           Eagle’s Community
         </Heading>
-        <FaChevronDown
-          style={iconStyle}
-        />
+        <FaChevronDown style={iconStyle} />
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
-        <Box border="1px solid #D1D7DE" borderRadius="md" mb={6} px={4} pt={2} >
+        <Box px={4} pt={2}>
           {dropdownItems.map((item, index) => (
-            <Flex key={index} alignItems="center" mb={4} gap={4} _hover={{
-                backgroundColor: "#0687FC", 
-                color: "white", 
-                transition: "background-color 0.3s ease, color 0.3s ease", 
+            <Flex
+              key={index}
+              alignItems="center"
+              mb={4}
+              gap={4}
+              _hover={{
+                backgroundColor: "#0687FC",
+                color: "white",
+                transition: "background-color 0.3s ease, color 0.3s ease",
               }}
-              p={2} 
+              p={2}
               cursor={"pointer"}
-              borderRadius="md" >
+              borderRadius="md"
+            >
               <item.icon style={iconStyle} />
               <Text>{item.text}</Text>
             </Flex>
@@ -69,5 +72,4 @@ const CommunitySection
   );
 };
 
-export default CommunitySection
-;
+export default CommunitySection;
