@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ChakraProvider, Grid } from "@chakra-ui/react";
+import Topbar from "./components/Topbar/Topbar";
+import Sidebar from "./components/Sidebar/Sidebar";
+import MainContent from "./components/MainContent/MainContent";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <Grid
+        templateAreas={` 
+          "topbar topbar" 
+          "sidebar main"
+        `}
+        gridTemplateRows="80px 1fr"
+        gridTemplateColumns={["1fr", "250px 1fr"]}
+        height="100vh" 
+        bg="#D1D7DE"
+      >
+        <Topbar />
+        <Sidebar />
+        <MainContent />
+      </Grid>
+    </ChakraProvider>
   );
-}
+};
 
 export default App;
