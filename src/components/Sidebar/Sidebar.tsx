@@ -9,7 +9,7 @@ const Sidebar = () => {
       direction="column"
       color="#606060"
       height="100%"
-      
+      bg="#F3F4F6"
       overflowY="auto"
       borderRight="2px solid #8F8F8F"
       pt={4}
