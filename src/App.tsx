@@ -13,8 +13,8 @@ const App = () => {
         `}
         gridTemplateRows="80px 1fr"
         gridTemplateColumns={["1fr", "250px 1fr"]}
-        height="100vh" 
-        bg="#D1D7DE"
+        height="100vh"
+        bg="#F3F4F6"
       >
         <Topbar />
         <Sidebar />

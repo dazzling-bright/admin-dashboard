@@ -7,7 +7,7 @@ const Topbar = () => {
       gridArea="topbar"
       border="2px solid transparent"
       borderBottomColor="#8F8F8F"
-      bg="#D1D7DE"
+      bg="#F3F4F6"
       px={12}
       py={6}
       display="flex"

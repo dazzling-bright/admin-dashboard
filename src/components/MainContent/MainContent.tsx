@@ -20,7 +20,7 @@ const MainContent = () => {
   const [activeTab, setActiveTab] = useState("Overview");
 
   return (
-    <Box bg="#D1D7DE" px={12} gridArea="main">
+    <Box bg="#F3F4F6" px={12} gridArea="main">
       <Flex justifyContent={"space-between"}>
         <Text mt={4} fontSize={24} fontWeight="500">
           Subscriptions
@@ -31,7 +31,7 @@ const MainContent = () => {
       </Flex>
 
       {/* Tabs for Overview and Plans */}
-      <Flex fontSize={20} bg="#D1D7DE" gap={10}>
+      <Flex fontSize={20} gap={10}>
         {/* Overview Tab */}
         <Flex
           alignItems="center"
@@ -116,7 +116,7 @@ const MainContent = () => {
           </InputGroup>
         </Box>
         <Table variant="simple" mt={4} color="#6B7280" p={4} px={8}>
-          <Thead textAlign="left" bg="#E5E7EB">
+          <Thead textAlign="left" bg="#e5e7eb">
             <Tr>
               <Th>Name</Th>
               <Th>Title</Th>
@@ -168,11 +168,12 @@ const MainContent = () => {
                   borderColor="#8F8F8F"
                   borderStyle="solid"
                   borderWidth="1px 0"
+                  bg="#F3F4F6"
                 >
                   <Text
-                    bg="#8F8F8F"
                     borderRadius="2xl"
-                    px="1"
+                    bg="#E5E7EB"
+                    p="1"
                     maxW="fit-content"
                   >
                     {item.phoneNumber}
