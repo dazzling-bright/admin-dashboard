@@ -1,5 +1,5 @@
 import { Box, Flex, Text, Collapse, FlexProps } from "@chakra-ui/react";
-import { MdFolder } from "react-icons/md";
+import { MdOutlineFolder } from "react-icons/md";
 import { FaRegCircle, FaChevronDown } from "react-icons/fa";
 import { IoMdAdd } from "react-icons/io";
 import { useState } from "react";
@@ -18,13 +18,14 @@ const SpaceItem: React.FC<SpaceItemProps> = ({ icon, label, ...props }) => (
 
 const Spaces: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   const iconStyles = {
-    fontSize: "24px",
+    fontSize: "20px",
     marginRight: "8px",
-    color: "#333",
+    color: "#6B7280",
   };
 
-  // List of sub-items for Maryland Space 
+  // List of sub-items for Maryland Space
   const spaceUnits = [
     { icon: <FaRegCircle style={iconStyles} />, label: "Protocol Unit" },
     { icon: <FaRegCircle style={iconStyles} />, label: "Ushering Unit" },
@@ -33,9 +34,15 @@ const Spaces: React.FC = () => {
   ];
 
   return (
-    <Box borderTop="2px solid #8F8F8F" pt={4} px={2} mt={6}>
+    <Box
+      borderTop="2px solid #D1D7DE"
+      borderBottom="2px solid #D1D7DE"
+      py={6}
+      px={2}
+      mt={6}
+    >
       <Flex alignItems="center" mb={4}>
-        <Text fontWeight="bold" textShadow="1px 1px 2px rgba(0,0,0,0.3)">
+        <Text fontWeight="bold" textShadow="0px 2px 2px rgba(0,0,0,0.3)">
           Spaces
         </Text>
       </Flex>
@@ -46,16 +53,24 @@ const Spaces: React.FC = () => {
         justifyContent="space-between"
         onClick={() => setIsOpen(!isOpen)}
         cursor="pointer"
+        color="#6B7280"
+        mb={3}
       >
         <Flex alignItems="center">
-          <MdFolder style={iconStyles} />
-          <Text mb={0} ml={2}>
-            Maryland
-          </Text>
+          <MdOutlineFolder style={iconStyles} />
+          <Text>Maryland</Text>
         </Flex>
-        <IoMdAdd style={iconStyles} />
+
+        <IoMdAdd
+          style={{
+            ...iconStyles,
+            transition: "transform 0.5s ease",
+            transform: isOpen ? "rotate(360deg)" : "rotate(0deg)",
+          }}
+        />
       </Flex>
-      {/** Collapsible */}
+
+      {/* Collapsible content */}
       <Collapse in={isOpen}>
         {spaceUnits.map((unit, index) => (
           <SpaceItem
@@ -67,6 +82,7 @@ const Spaces: React.FC = () => {
               transition: "background-color 0.3s ease, color 0.3s ease",
             }}
             p={2}
+            my={0}
             cursor="pointer"
             borderRadius="md"
           />
@@ -76,12 +92,12 @@ const Spaces: React.FC = () => {
       {/* Abuja Expression Section */}
       <Flex alignItems="center" justifyContent={"space-between"} mt={4}>
         <Flex alignItems="center">
-          <MdFolder style={iconStyles} />
-          <Text fontWeight="bold" textShadow="1px 1px 2px rgba(0,0,0,0.3)">
+          <MdOutlineFolder style={iconStyles} />
+          <Text fontWeight="bold" textShadow="0px 2px 2px rgba(0,0,0,0.3)">
             Abuja Expression
           </Text>
         </Flex>
-        <FaChevronDown style={iconStyles} />
+        <FaChevronDown cursor="pointer" style={iconStyles} />
       </Flex>
     </Box>
   );
