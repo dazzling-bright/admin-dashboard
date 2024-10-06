@@ -34,13 +34,7 @@ const Spaces: React.FC = () => {
   ];
 
   return (
-    <Box
-      borderTop="2px solid #D1D7DE"
-      borderBottom="2px solid #D1D7DE"
-      py={6}
-      px={2}
-      mt={6}
-    >
+    <Box borderBottom="2px solid #D1D7DE" py={6} px={2}>
       <Flex alignItems="center" mb={4}>
         <Text fontWeight="bold" textShadow="0px 2px 2px rgba(0,0,0,0.3)">
           Spaces
@@ -54,7 +48,7 @@ const Spaces: React.FC = () => {
         onClick={() => setIsOpen(!isOpen)}
         cursor="pointer"
         color="#6B7280"
-        mb={3}
+        mb={4}
       >
         <Flex alignItems="center">
           <MdOutlineFolder style={iconStyles} />
@@ -64,33 +58,39 @@ const Spaces: React.FC = () => {
         <IoMdAdd
           style={{
             ...iconStyles,
-            transition: "transform 0.5s ease",
-            transform: isOpen ? "rotate(360deg)" : "rotate(0deg)",
+            transition: "transform 0.3s ease",
+            transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
           }}
         />
       </Flex>
 
       {/* Collapsible content */}
-      <Collapse in={isOpen}>
-        {spaceUnits.map((unit, index) => (
-          <SpaceItem
-            key={index}
-            {...unit}
-            _hover={{
-              backgroundColor: "#0687FC",
-              color: "white",
-              transition: "background-color 0.3s ease, color 0.3s ease",
-            }}
-            p={2}
-            my={0}
-            cursor="pointer"
-            borderRadius="md"
-          />
-        ))}
+      <Collapse in={isOpen} animateOpacity>
+        <Box
+          style={{
+            transition: "height 0.3s ease, opacity 0.3s ease",
+          }}
+        >
+          {spaceUnits.map((unit, index) => (
+            <SpaceItem
+              key={index}
+              {...unit}
+              _hover={{
+                backgroundColor: "#0687FC",
+                color: "white",
+                transition: "background-color 0.3s ease, color 0.3s ease",
+              }}
+              p={2}
+              my={0}
+              cursor="pointer"
+              borderRadius="md"
+            />
+          ))}
+        </Box>
       </Collapse>
 
       {/* Abuja Expression Section */}
-      <Flex alignItems="center" justifyContent={"space-between"} mt={4}>
+      <Flex alignItems="center" justifyContent={"space-between"} pt={4}>
         <Flex alignItems="center">
           <MdOutlineFolder style={iconStyles} />
           <Text fontWeight="bold" textShadow="0px 2px 2px rgba(0,0,0,0.3)">

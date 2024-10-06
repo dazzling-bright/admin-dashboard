@@ -29,14 +29,15 @@ const CommunitySection = () => {
 
   return (
     <>
-      <Box>
+      <Box >
         {/* Header Section */}
         <Flex
           alignItems="center"
           justifyContent="space-between"
           cursor="pointer"
-        
           px={2}
+          h="70px"
+          borderBottom="1px solid #D1D7DE"
           onClick={() => setIsOpen(!isOpen)}
         >
           <Heading

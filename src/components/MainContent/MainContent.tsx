@@ -64,25 +64,26 @@ const MainContent = () => {
       <Flex
         justifyContent={"space-between"}
         px={12}
-        borderBottom="2px solid #000"
+        h="70px"
+        alignItems="center"
+        borderBottom="1px solid #D1D7DE"
       >
-        <Text mt={4} fontSize={24} fontWeight="500">
+        <Text fontSize="lg" fontWeight="500" px={4}>
           Subscriptions
         </Text>
-        <Button mt={4} bg="#FF8800" color="white" _hover={{ bg: "#ff6f00" }}>
+        <Button bg="#FF8800" color="white" _hover={{ bg: "#ff6f00" }}>
           New Plans
         </Button>
       </Flex>
 
       {/* Tabs for Overview and Plans */}
-      <Flex fontSize={20} gap={10}>
+      <Flex fontSize={20} gap={10} px={12} borderBottom="1px solid #D1D7DE">
         <Flex
           alignItems="center"
           cursor="pointer"
           onClick={() => setActiveTab("Overview")}
         >
           <Text
-            mt={4}
             p={4}
             borderBottom="3px solid transparent"
             borderBottomColor={
@@ -107,7 +108,6 @@ const MainContent = () => {
           onClick={() => setActiveTab("Plans")}
         >
           <Text
-            mt={4}
             p={4}
             borderBottom="3px solid transparent"
             borderBottomColor={
@@ -130,7 +130,9 @@ const MainContent = () => {
       {/* Table */}
       <Box
         mt={6}
-        borderRadius="md"
+        mx={12}
+        mb={8}
+        borderRadius="2xl"
         boxShadow="md"
         border="2px solid #D1D7DE"
         color="#333"
@@ -196,7 +198,7 @@ const MainContent = () => {
                         <Text mb={2}>
                           {highlightText(item.name, searchTerm)}
                         </Text>
-                        <Text fontSize="sm" color="gray.500">
+                        <Text fontSize="sm" color="#8F8F8F">
                           {highlightText(item.email, searchTerm)}
                         </Text>
                       </Box>
@@ -211,11 +213,9 @@ const MainContent = () => {
                     borderWidth="1px 0"
                   >
                     <Flex direction="column" alignItems="flex-start">
-                      <Text mb={2}>
-                        {highlightText(item.title, searchTerm)}
-                      </Text>
-                      <Text fontSize="sm" color="gray.500">
-                        {highlightText(item.companyName, searchTerm)}
+                      <Text mb={2}>{item.title}</Text>
+                      <Text fontSize="sm" color="#8F8F8F">
+                        {item.companyName}
                       </Text>
                     </Flex>
                   </Td>

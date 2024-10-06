@@ -12,7 +12,6 @@ const Sidebar = () => {
       bg="#F3F4F6"
       overflowY="auto"
       borderRight="2px solid #D1D7DE"
-      pt={4}
       gridArea="sidebar"
     >
       <SectionOne />
