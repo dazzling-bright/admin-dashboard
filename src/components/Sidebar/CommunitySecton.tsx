@@ -22,14 +22,14 @@ const CommunitySection = () => {
   const iconStyle = {
     fontSize: "20px",
     marginRight: "8px",
-    color: "#6B7280",
+    color: "text.light",
     transition: "transform 0.3s ease, color 0.3s ease",
     transform: isOpen ? "rotate(0deg)" : "rotate(180deg)",
   };
 
   return (
     <>
-      <Box >
+      <Box>
         {/* Header Section */}
         <Flex
           alignItems="center"
@@ -37,13 +37,15 @@ const CommunitySection = () => {
           cursor="pointer"
           px={2}
           h="70px"
-          borderBottom="1px solid #D1D7DE"
+          borderBottom="1px solid"
+          borderColor="border"
           onClick={() => setIsOpen(!isOpen)}
         >
           <Heading
             fontSize="lg"
             fontWeight="bold"
             textShadow="0px 2px 2px rgba(0,0,0,0.5)"
+            color="text.light"
           >
             Eagle’s Community
           </Heading>
@@ -53,7 +55,7 @@ const CommunitySection = () => {
 
         {/* Collapsible Content */}
         <Collapse in={isOpen} animateOpacity>
-          <Box px={4} pt={2} color="#6B7280">
+          <Box px={4} pt={2} >
             {dropdownItems.map((item, index) => (
               <Flex
                 key={index}
@@ -61,7 +63,7 @@ const CommunitySection = () => {
                 m={0}
                 gap={4}
                 _hover={{
-                  backgroundColor: "#0687FC",
+                  backgroundColor: "primary",
                   color: "white",
                   transition: "background-color 0.3s ease, color 0.3s ease",
                 }}

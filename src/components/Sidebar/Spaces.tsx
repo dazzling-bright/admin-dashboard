@@ -22,7 +22,7 @@ const Spaces: React.FC = () => {
   const iconStyles = {
     fontSize: "20px",
     marginRight: "8px",
-    color: "#6B7280",
+    color: "text.dark",
   };
 
   // List of sub-items for Maryland Space
@@ -34,12 +34,18 @@ const Spaces: React.FC = () => {
   ];
 
   return (
-    <Box borderBottom="2px solid #D1D7DE" py={6} px={2}>
-      <Flex alignItems="center" mb={4}>
-        <Text fontWeight="bold" textShadow="0px 2px 2px rgba(0,0,0,0.3)">
-          Spaces
-        </Text>
-      </Flex>
+    <Box
+      borderBottom="2px solid"
+      borderColor="border"
+      py={6}
+      px={2}
+      color="text.light"
+    >
+      <Text  fontSize="lg"
+            fontWeight="bold"
+            textShadow="0px 2px 2px rgba(0,0,0,0.5)" mb={4}>
+        Spaces
+      </Text>
 
       {/* Maryland Section */}
       <Flex
@@ -47,7 +53,6 @@ const Spaces: React.FC = () => {
         justifyContent="space-between"
         onClick={() => setIsOpen(!isOpen)}
         cursor="pointer"
-        color="#6B7280"
         mb={4}
       >
         <Flex alignItems="center">
@@ -63,7 +68,6 @@ const Spaces: React.FC = () => {
           }}
         />
       </Flex>
-
       {/* Collapsible content */}
       <Collapse in={isOpen} animateOpacity>
         <Box
@@ -76,7 +80,7 @@ const Spaces: React.FC = () => {
               key={index}
               {...unit}
               _hover={{
-                backgroundColor: "#0687FC",
+                backgroundColor: "primary",
                 color: "white",
                 transition: "background-color 0.3s ease, color 0.3s ease",
               }}
@@ -88,12 +92,15 @@ const Spaces: React.FC = () => {
           ))}
         </Box>
       </Collapse>
-
       {/* Abuja Expression Section */}
       <Flex alignItems="center" justifyContent={"space-between"} pt={4}>
         <Flex alignItems="center">
           <MdOutlineFolder style={iconStyles} />
-          <Text fontWeight="bold" textShadow="0px 2px 2px rgba(0,0,0,0.3)">
+          <Text
+            fontSize="lg"
+            fontWeight="bold"
+            textShadow="0px 2px 2px rgba(0,0,0,0.5)"
+          >
             Abuja Expression
           </Text>
         </Flex>

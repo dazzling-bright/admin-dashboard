@@ -2,10 +2,11 @@ import { ChakraProvider, Grid } from "@chakra-ui/react";
 import Topbar from "./components/Topbar/Topbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import MainContent from "./components/MainContent/MainContent";
+import customTheme from "./theme/theme";
 
 const App = () => {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={customTheme}>
       <Grid
         templateAreas={` 
           "topbar topbar" 

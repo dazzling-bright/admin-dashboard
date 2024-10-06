@@ -7,11 +7,12 @@ const Sidebar = () => {
   return (
     <Flex
       direction="column"
-      color="#606060"
+      color="text.gray"
       height="100%"
-      bg="#F3F4F6"
+      bg="background.light"
       overflowY="auto"
-      borderRight="2px solid #D1D7DE"
+      borderRight="2px solid"
+      borderColor="border"
       gridArea="sidebar"
     >
       <SectionOne />
